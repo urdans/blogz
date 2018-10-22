@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="/static/style.css" rel="stylesheet" type="text/css" />
+    {% if logged_user_name() %}
+        <title>Blogz - {{logged_user_name()}}</title>
+    {% else %}
+        <title>Blogz</title>
+    {% endif %}
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="upper">
+            <img src="/static/OS_brain_cloud-2.png" height="100" width="100">
+            <h1>Blogz</h1>
+            <i>"The thinking duty-free zone"</i>
+        </div>
+        <ul class="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            {% if logged_user_name() %}
+                <li><a href="/myposts">My posts</a></li>
+                <li><a href="/newpost">New post</a></li>
+            {% endif %}
+            {% if logged_user_name() %}
+                <li><a href="/logout">Log out</a></li>
+            {% else %}
+                <li><a href="/login">Log in</a></li>
+                <li><a href="/register">Register</a></li>
+            {% endif %}
+        </ul>
+    </header>
+
+    <div class="under-header">
+        <a href="/?page=last"><img src="/static/Last-.png"></a>
+        <a href="/?page=next"><img src="/static/Next-.png"></a>
+        <a href="/?page=prev"><img src="/static/Prev-.png"></a> 
+        <a href="/?page=first"><img src="/static/Fist-.png"></a>
+        <small style="color: white; float: right; padding: 5px 15px 5px 0;">{{page_number_of_total_str()}}</small>
+    </div>
+
+    <div class="margintop"></div>
+
+    <div class="ml-10">
+        {% with messages = get_flashed_messages(with_categories=True) %}
+        <ul class="ml-10">
+            {% for category,message in messages %}
+            <li class="{{category}}">{{message}}</li>
+            {% endfor %}
+        </ul>
+        {% endwith %}
+    </div>
+
+    {% block content%}
+    {% endblock %}
+</body>
+
+</html>

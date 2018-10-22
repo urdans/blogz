@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content%}
+<div class="container">
+{% if loggin %}
+    <form action="/login" method="post" >
+{% else %}
+    <form action="/register" method="post" >
+{% endif %}   
+    {% if loggin %}
+        <h1>Log In</h1>
+        <div class="meta-data">
+            <span>Please fill in your credentials.</span>
+        </div>
+    {% else %}
+        <h1>Sign Up</h1>
+        <div class="meta-data">
+            <span>Please fill in this form to create an account.</span>
+        </div>
+    {% endif %}
+        <label class="control-label" for="username"><b>User name:</b></label>
+        <div class="ml-10">
+            <input class="form-control" type="text" value="{{username_value}}" placeholder="Enter user name" name="username">
+        </div>
+    {% if not loggin %}
+        <label class="control-label" for="email"><b>Email:</b></label>
+        <div class="ml-10">
+            <input class="form-control" type="text" value="{{email_value}}" placeholder="Enter Email" name="email">
+        </div>
+    {% endif %}
+        <label class="control-label" for="psw"><b>Password:</b></label>
+        <div class="ml-10">
+            <input class="form-control" type="password" placeholder="Enter Password" name="psw">
+        </div>
+    {% if not loggin %}
+        <label class="control-label" for="psw-repeat"><b>Retype Password:</b></label>
+        <div class="ml-10">
+            <input class="form-control" type="password" placeholder="Confirm password" name="repsw">
+        </div>
+    {% endif %}
+        <div class="ml-10">
+            <button type="submit" class="btn">Submit</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

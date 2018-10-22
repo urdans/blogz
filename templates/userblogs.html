@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1><i>Posts from {{user.name}}</i></h1>
+    <br><hr>
+    {% for post in user.posts %}
+        <div class="meta-data">
+            <h3><a href="/blog?titleid={{post.thread_id}}">{{post.thread.title}}</a></h3>
+            <small>{{post.date}}</small>
+        </div>
+        <p>{{post.text}}</p>
+        <div class="container-footer">
+            <a href="/blog?repplyto={{post.id}}">Repply</a>
+            <small ><i>{{post.repplies_count()}} repplies</i></small>
+        </div>        
+        <br>
+        <hr>
+    {% endfor %}
+</div>
+{% endblock %}

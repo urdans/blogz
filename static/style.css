@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid black; */
+    box-sizing: border-box; }
+
+.error {
+    color: rgb(150, 0, 0);}
+
+.msg {
+    color: #323b41;}
+
+body {
+    background-color: #ececec;
+    font-family: "Segoe UI";
+    font-size: 1rem;
+    font-weight: 400;
+    color: #333333; }
+
+header {
+    background-color: #5f788a;
+    color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    font-family:sans-serif; }
+
+.upper {
+    overflow: hidden; }
+
+header img{
+    display: block;
+    float: left; }
+
+header h1 {
+    margin-top: 20px;
+    letter-spacing: 0.2em;
+    text-shadow: 3px 2px #3c5a6e; }
+
+header i{
+    text-shadow: 3px 2px #3c5a6e;
+    display: block;}
+
+.menu {
+    list-style-type: none;
+    background-color: #5f788a;
+    overflow: hidden;
+    padding-bottom: 5px;}
+
+.menu li {
+    width: 16.666%;
+    float: left;
+    letter-spacing: 0.2em;}
+
+.menu li a{
+    text-decoration: none;
+    color: inherit;
+    text-shadow: 2px 2px #3c5a6e;
+    display: inline-block;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    border: 1px solid #5f788a;
+    border-radius: 10px;}
+
+.menu li a:hover{
+    border: 1px solid white;}
+
+.under-header {
+    margin-top: 145px;
+    background-color: #375062;
+    padding: 5px 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right:0;
+    z-index: 1;}
+
+.under-header img {
+    float: right;
+    filter: brightness(0%); }
+
+.under-header small {
+    color: white;
+    float: right;
+    padding: 5px 15px 5px 0; }
+    
+.under-header a:hover img{
+    filter: brightness(475%); }
+
+.margintop {
+    display: block;
+    margin-top: 214px;
+    background-color: yellow;}
+
+.container {
+    width: 90%;
+    margin: 40px auto;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    background-color: white;
+    padding: 25px 25px 25px 50px;
+    color: #444;
+    line-height: 1.5;}
+
+.container h1 {
+    font-weight: 400;
+    margin-bottom: 25p; }
+
+.container a{
+    text-decoration: none;
+    color: #4b6476;}
+    
+.container a:hover{
+    text-shadow: 1px 1px #738c9e;}
+
+.container p{
+    margin: 25px 0; }
+
+.meta-data {
+    border-bottom: 1px solid #e3e3e3;
+    padding: 5px;
+    overflow: hidden; }
+
+.meta-data a{
+    float: left; }
+
+.meta-data small {
+    float: right; }
+
+.container-footer {
+    border-top: 1px solid #e3e3e3;
+    padding: 5px;
+    overflow: hidden; }
+
+.container-footer a{
+    float: left; }
+
+.container-footer small {
+    float: right; }
+
+@media (max-width: 580px) {
+    .menu li a{
+        letter-spacing: -0.05em;
+    }}
+
+@media (max-width: 400px) {
+    
+    header {
+        position: static;
+    }
+
+    .menu li {
+        display: block;
+        width: 100%;
+    }
+
+    .menu li a{
+        font-size: 1em;;
+        letter-spacing: 0.2em;
+        padding: 2px 0;
+    }            
+
+    .under-header {
+        top: 0;
+        position:sticky;
+        margin-top: 0;
+    }
+    
+    .margintop {
+        display: none;
+        /* margin-top: 300px */
+    }
+
+    .container {
+        width: 100%;
+        margin: 20px auto;
+        border: none;
+        border-radius: 0;
+        background-color: white;
+        padding: 5px;
+    }}
+
+@media (max-width: 350px) {
+    header i{ font-size: 0.8em;}}
+
+.control-label {
+    display: block;
+    margin: 25px 0 5px 0;}
+
+.ml-10 {
+    padding: 0 0 0 15px; }
+
+.ml-40 {
+        padding: 0 0 0 40px; 
+        margin-left: 40px;}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 6px 12px; 
+    border: 1px solid #ced4da;
+    border-radius: 4px; 
+    font-family: "Segoe UI";
+    font-size: 1rem;
+    color: #495057;}
+
+.form-control:focus {
+    box-shadow: 0 0 3pt 2pt #88bee4; }
+
+.ml-10 button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px; }
+
+.btn {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-family: "Segoe UI";
+    font-size: 1rem;
+    background-color: #5f788a;
+    color: white;}
+
+.btn:hover, .btn:focus {
+    background-color: #8094a3;}
+
+.ml-10 textarea {
+    margin-top: 25px;
+    width: 100%;
+    padding: 10px;
+    color: #495057;
+    border: 1px solid #ced4da;
+    border-radius: 4px; 
+    font-family: "Segoe UI";
+    font-size: 1rem;
+    height: 100px;
+    resize: none;}
+
+.ml-10 textarea:focus {
+    box-shadow: 0 0 3pt 2pt #88bee4;
+}

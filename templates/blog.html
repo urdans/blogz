@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="meta-data">
+        <a href="/blog?userid={{post.user_id}}">{{post.user.name}}</a>
+        <small>{{post.date}}</small>
+    </div>
+    <h1><a href="/blog?titleid={{post.thread_id}}">{{post.thread.title}}</a></h1>
+    <p>{{post.text}}<a href="/"> ...less</a></p>
+    <div class="container-footer">
+        <a href="/blog?repplyto={{post.id}}">Repply</a>
+        <small><i>{{post.repplies_count()}} repplies</i></small>    
+    </div>
+</div>
+{% endblock %}

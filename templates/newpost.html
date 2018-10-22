@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    {% if post %} {# it's a repply to an existing post, the one it's shown below #}
+        <div class="meta-data">
+            <a href="/blog?userid={{post.user_id}}">{{post.user.name}}</a>
+            <small>{{post.date}}</small>
+        </div>
+        <h1><a href="/blog?titleid={{post.thread_id}}">{{post.thread.title}}</a></h1>
+        <p class="article-content">{{post.text}}</p>
+    {% endif %}
+
+    <div class="container-footer">
+        <span>{{username}}</span>
+        <form action="/blog" method="post" >
+            {% if not post %}
+            <br>
+            <div class="ml-10">
+                <input class="form-control" type="text" placeholder="Enter the title for this post" name="threadtitle" autofocus>
+            </div>
+            {% endif %}
+            <div class="ml-10">
+                <textarea name="newposttext" autofocus></textarea>
+            </div>
+            <input type="hidden" name="threadid" value="{% if post %} {{post.thread.id}} {% else %} -1 {% endif %}"/>
+            <input type="hidden" name="postidrepplied" value="{% if post %} {{post.id}} {% else %} -1 {% endif %}"/>
+            <div class="ml-10">
+                <button type="submit" class="btn">Submit</button>
+                <button formaction="/" class="btn">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

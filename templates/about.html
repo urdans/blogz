@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1>About our community</h1>
+        <p>This is a blog to share any idea of any kind without shame. You can be simplistic or sophisticated, in all cases you are welcome.
+        Be respecfull of the other members of the community.</p>
+        <h1>Some stats about us:</h1>
+        <div class="ml-10">
+            <p>There are {{ registered_users_count() }}  registered users so far.</p>
+            <p>There are {{ online_users_count() }} users online right now.</p>
+            <div class="ml-10">
+                <div class="ml-40">
+                    <ul>
+                        {% for username in get_online_user_list() %}
+                            <li>{{username}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
