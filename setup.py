@@ -9,10 +9,10 @@ os.system('cls')
 
 
 # create all the tables
-print("Build-a-blog assignment setup\n=============================\n")
+print("Blogz assignment setup\n=============================\n")
 print("The following procedure will recreate all the needed tables and will populate them with some mock data.\n")
-print("The MySQL database 'build-a-blog' must exist prior to continue!")
-print("The user 'build-a-blog' must exist. Password 'urdans'")
+print("The MySQL database 'blogz' must exist prior to continue!")
+print("The user 'blogz' must exist. Password 'urdans'")
 
 r = input("Proceed (y/n): ")
 

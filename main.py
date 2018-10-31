@@ -4,10 +4,10 @@ from datetime import datetime
 import re
 import hashlib
 
-username = 'build-a-blog'
+username = 'blogz' #build-a-blog'
 password = 'urdans'
 host = 'localhost:8889'
-databasename = 'build-a-blog'
+databasename = 'blogz' #'build-a-blog'
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
@@ -241,6 +241,10 @@ def main():
 # page from inside the template.
 # For prev and next, it will be like this: teh template can ask which one is the prev and next page or I can write funtions to get those numbers, like:
 # get_last_page_number(), get_prev_page_number(), and get_next_page_number(). I LIKE THIS ONE!!!!!!!!!!!!!
+# use sha256, incorporate it inside the user class, use salt
+
+
+
 
 @app.route("/blog", methods=['GET', 'POST'])
 def blog():
